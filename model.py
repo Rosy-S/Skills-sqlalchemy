@@ -48,25 +48,6 @@ class Brand(db.Model):
 # Helper functions
 
 
-#Query functions 
-def get_model_info(year):
-    '''Takes in a year, and prints out each model, brand_name, and brand
-    headquarters for that year using only ONE database query.'''
-
-    model_list = Model.query.filter(Model.year == year).all()
-    for model in model_list: 
-        print model.id, model.name, model.brand.headquarters
-    pass
-
-def get_brands_summary():
-    '''Prints out each brand name, and each model name for that brand
-     using only ONE database query.'''
-    brand_list = Brand.query.all()
-    for brand in brand_list: 
-        print brand.name, brand.models.name 
-
-
-    pass
 
 
 def connect_to_db(app):
